@@ -1,3 +1,5 @@
+
+
 "use client"
 
 import { useState } from "react"
@@ -149,9 +151,14 @@ export default function Projects() {
               {/* Project Content */}
               <div className="p-6">
                 <div className="flex items-center justify-between mb-3">
-                  <h3 className="text-xl font-bold text-black dark:text-white group-hover:underline transition-all duration-300">
+                  <Link
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xl font-bold text-black dark:text-white group-hover:underline transition-all duration-300"
+                  >
                     {project.title}
-                  </h3>
+                  </Link>
                   <span className="text-xs text-black dark:text-white bg-gray-200 dark:bg-gray-800 px-2 py-1 rounded-full border border-gray-300 dark:border-gray-700">
                     {project.category}
                   </span>
@@ -190,3 +197,4 @@ export default function Projects() {
     </section>
   )
 }
+

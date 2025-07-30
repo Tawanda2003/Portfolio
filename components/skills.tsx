@@ -1,3 +1,5 @@
+
+
 "use client"
 
 import { useState } from "react"
@@ -60,18 +62,8 @@ export default function Skills() {
               onMouseEnter={() => setHoveredSkill(skill.name)}
               onMouseLeave={() => setHoveredSkill(null)}
             >
-              <div className="flex justify-between items-center mb-4">
+              <div className="mb-4">
                 <h3 className="text-xl font-semibold text-black dark:text-white">{skill.name}</h3>
-                <span className="text-black dark:text-white font-bold">{skill.level}%</span>
-              </div>
-
-              <div className="w-full bg-gray-200 dark:bg-gray-800 rounded-full h-3 overflow-hidden border border-gray-300 dark:border-gray-700">
-                <div
-                  className="h-full bg-black dark:bg-white rounded-full transition-all duration-1000 ease-out"
-                  style={{
-                    width: hoveredSkill === skill.name ? `${skill.level}%` : "0%",
-                  }}
-                />
               </div>
 
               <span className="text-xs text-black dark:text-white mt-2 inline-block px-2 py-1 bg-gray-200 dark:bg-gray-800 rounded-full border border-gray-300 dark:border-gray-700">
@@ -84,3 +76,4 @@ export default function Skills() {
     </section>
   )
 }
+
