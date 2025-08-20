@@ -56,13 +56,13 @@ export default function Projects() {
     },
     {
       id: 5,
-      title: "Portfolio Website",
+      title: "Shopping Website",
       description:
-        "A modern, responsive portfolio website showcasing creative design and smooth animations with optimized performance.",
-      image: "/placeholder.svg?height=300&width=400",
+        "Discover a fast and stylish frontend shopping site that makes browsing, selecting, and buying products easier than ever.",
+      image: "/gadgets.jpg?height=300&width=400",
       technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
-      githubUrl: "#",
-      liveUrl: "#",
+      githubUrl: "https://github.com/Tawanda2003/ShoppingWebsite.git",
+      liveUrl: "https://shopping-website-livid-nu.vercel.app/",
       category: "Frontend",
     },
   ]
