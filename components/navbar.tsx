@@ -33,71 +33,6 @@ export default function Navbar() {
     return pathname.startsWith(href)
   }
 
-  const downloadCV = () => {
-    const cvContent = `CURRICULUM VITAE
-FOR
-TAWANDA GWESHE
-
-CONTACT INFORMATION
-Cell: +263 77 989 0522
-Email: gweshetawanda3@gmail.com
-Address: 1211 Aspindale Park, Kambuzuma, Joshua Nkomo, Harare
-
-PERSONAL DETAILS
-Date of Birth: 26 March 2003
-Gender: Male
-National ID: 63-2329872C34
-Marital Status: Single
-Home Language: Shona and English
-Nationality: Zimbabwean
-
-EDUCATIONAL QUALIFICATIONS
-
-GCE - ORDINARY LEVEL
-English: C
-Mathematics: C
-Combined Science: B
-Geography: B
-Commerce: B
-Shona: B
-
-GCE - ADVANCED LEVEL
-History: C
-Family Religious Studies: C
-Shona Language: A
-
-TECHNICAL SKILLS
-- Front-End Development (HTML, CSS, JavaScript)
-- React.js & Next.js
-- Node.js
-- Supabase
-- Python (Basic)
-- UI/UX Design
-- Digital Marketing
-
-PERSONAL ATTRIBUTES
-- Ability to maintain relations with others
-- Pressure handling
-- Good communication skills and good team player
-- Honest and loyal
-- Passionate and determined person
-- Quick learner
-- Computer Literacy
-
-PROFESSIONAL SUMMARY
-Passionate Front-End Developer who began coding journey from scratch, starting with visual platforms like Scratch to build simple games and animations. Specializes in creating responsive, user-friendly websites and web applications using modern web technologies.`
-
-    const blob = new Blob([cvContent], { type: "text/plain" })
-    const url = window.URL.createObjectURL(blob)
-    const a = document.createElement("a")
-    a.href = url
-    a.download = "Tawanda_Gweshe_CV.txt"
-    document.body.appendChild(a)
-    a.click()
-    document.body.removeChild(a)
-    window.URL.revokeObjectURL(url)
-  }
-
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -142,9 +77,11 @@ Passionate Front-End Developer who began coding journey from scratch, starting w
               ))}
             </div>
 
-            {/* CV Download Button */}
-            <button
-              onClick={downloadCV}
+            {/* CV View Button */}
+            <a
+              href="/TAWANDA-GWESHE-CV.pdf" // Must be inside /public
+              target="_blank"
+              rel="noopener noreferrer"
               className={`flex items-center space-x-2 px-4 py-2 font-medium rounded-lg border-2 transition-all duration-300 hover:scale-105 ${
                 scrolled
                   ? "bg-white dark:bg-black text-black dark:text-white border-white dark:border-black hover:bg-transparent hover:text-white dark:hover:text-black"
@@ -152,8 +89,8 @@ Passionate Front-End Developer who began coding journey from scratch, starting w
               }`}
             >
               <Download className="w-4 h-4" />
-              <span>Download CV</span>
-            </button>
+              <span>View CV</span>
+            </a>
 
             <ThemeToggle scrolled={scrolled} />
           </div>
@@ -192,16 +129,17 @@ Passionate Front-End Developer who began coding journey from scratch, starting w
                   {item.name}
                 </Link>
               ))}
-              <button
-                onClick={() => {
-                  downloadCV()
-                  setIsOpen(false)
-                }}
+
+              <a
+                href="/TAWANDA-GWESHE-CV.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setIsOpen(false)}
                 className="w-full flex items-center space-x-2 px-3 py-2 bg-white dark:bg-black text-black dark:text-white font-medium rounded-md border-2 border-white dark:border-black hover:bg-transparent hover:text-white dark:hover:text-black transition-all duration-300"
               >
                 <Download className="w-4 h-4" />
-                <span>Download CV</span>
-              </button>
+                <span>View CV</span>
+              </a>
             </div>
           </div>
         )}
